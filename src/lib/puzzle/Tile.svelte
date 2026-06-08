@@ -40,21 +40,21 @@
 	 */
 	function chooseBgColor(locked, isPartOfLoop) {
 		if (isPartOfLoop) {
-			bgColor = locked ? '#f99' : '#fbb';
+			bgColor = locked ? '#E5B710' : '#FF751F';
 		} else {
-			bgColor = locked ? '#bbb' : '#ddd';
+			bgColor = locked ? '#333' : '#222';
 		}
 	}
 
 	$: if ($state.hasDisconnects) {
-		strokeColor = $disconnectStrokeColor;
-		strokeWidth = game.grid.STROKE_WIDTH * $disconnectStrokeWidthScale;
+		strokeColor = '#e99002';
+		strokeWidth = game.grid.STROKE_WIDTH * $disconnectStrokeWidthScale/2;
 	} else if ($state.isPartOfIsland) {
-		strokeColor = '#b55';
-		strokeWidth = game.grid.STROKE_WIDTH;
+		strokeColor = '#E5B710';
+		strokeWidth = game.grid.STROKE_WIDTH/2;
 	} else {
-		strokeColor = '#888';
-		strokeWidth = game.grid.STROKE_WIDTH;
+		strokeColor = '#007ea7';
+		strokeWidth = game.grid.STROKE_WIDTH/2;
 	}
 	$: chooseBgColor($state.locked, $state.isPartOfLoop);
 	$: outlineWidth = 2 * strokeWidth + game.grid.PIPE_WIDTH;
@@ -65,7 +65,7 @@
 	<!-- Tile hexagon -->
 	<path
 		d={game.grid.getTilePath(i)}
-		stroke="#aaa"
+		stroke="#007ea7"
 		stroke-width="0.02"
 		fill={bgColor}
 		style="transform: {tile_transform}"
