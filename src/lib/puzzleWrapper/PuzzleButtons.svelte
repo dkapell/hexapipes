@@ -31,10 +31,6 @@
 		<button on:click={newPuzzle}> ➡️ New puzzle </button>
 	{/if}
 </div>
-<div class="buttons secondary">
-	<!-- Download button -->
-	<button on:click={() => dispatch('download')}> ⬇️ Download this puzzle</button>
-</div>
 
 {#if showSettings}
 	<Settings />

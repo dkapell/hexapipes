@@ -1,8 +1,8 @@
 <script>
 	import Header from '$lib/header/Header.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
-	import './theme.css';
-	import './app.css';
+	import '../theme.css';
+	import '../app.css';
 </script>
 
 <div class="container">

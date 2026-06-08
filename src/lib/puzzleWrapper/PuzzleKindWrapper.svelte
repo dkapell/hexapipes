@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { getSolves, getStats } from '$lib/stores';
+	import { getSolves } from '$lib/stores';
 	import { goto } from '$app/navigation';
 
 	import Stats from '$lib/Stats.svelte';
@@ -21,8 +21,6 @@
 
 	/** @type {import('$lib/stores').SolvesStore}*/
 	let solves;
-	/** @type {import('$lib/stores').StatsStore}*/
-	let stats;
 
 	$: pathname = `/${category}/${size}/${puzzleId}`;
 	$: progressStoreName = pathname + '_progress';
@@ -32,7 +30,6 @@
 
 	onMount(() => {
 		solves = getSolves(pathname);
-		stats = getStats(pathname);
 
 		const haveUnfinishedBusiness =
 			$solves.length > 0 && $solves[0].puzzleId !== -1 && $solves[0].elapsedTime === -1;
@@ -55,10 +52,4 @@
 		{instanceStoreName}
 		{solves}
 	/>
-{/if}
-
-{#if stats}
-	<div class="stats">
-		<Stats {stats} />
-	</div>
 {/if}

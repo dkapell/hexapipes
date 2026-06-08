@@ -43,8 +43,8 @@ function createSettings() {
 		/** @type {ControlMode} */
 		controlMode: 'rotate_lock',
 		invertRotationDirection: false,
-		showTimer: true,
-		disableZoomPan: false,
+		showTimer: false,
+		disableZoomPan: true,
 		assistant: false,
 		/** @type {AnimationSpeed} */
 		animationSpeed: 'normal'
