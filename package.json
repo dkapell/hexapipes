@@ -13,10 +13,12 @@
 		"test": "vitest --exclude **/dailies.test.js",
 		"daily": "vitest run dailies",
 		"coverage": "vitest run --coverage",
-		"bench": "vitest bench"
+		"bench": "vitest bench",
+"start": "node build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/adapter-vercel": "^4.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
