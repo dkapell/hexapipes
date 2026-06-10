@@ -18,6 +18,8 @@
 	export let height;
 	/** @type {Number[]} */
 	export let tiles = [];
+	/** @type {String} */
+	export let back;
 
 	/** @type {import('$lib/stores').SolvesStore}*/
 	let solves;
@@ -51,5 +53,6 @@
 		{progressStoreName}
 		{instanceStoreName}
 		{solves}
+		{back}
 	/>
 {/if}

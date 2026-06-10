@@ -8,6 +8,8 @@
 	import PuzzleButtons from '$lib/puzzleWrapper/PuzzleButtons.svelte';
 	import Timer from '$lib/Timer.svelte';
 	import { goto } from '$app/navigation';
+	import { redirect } from '@sveltejs/kit';
+
 
 	/** @type {import('$lib/puzzle/grids/grids').GridKind} */
 	export let gridKind;
@@ -27,6 +29,8 @@
 	export let instanceStoreName;
 	/** @type {import('$lib/stores').SolvesStore}*/
 	export let solves;
+	/** @type {String} */
+	export let back;
 
 	/** @type {import('$lib/stores').Solve} */
 	let solve = {
@@ -77,6 +81,10 @@
 		window.localStorage.removeItem(progressStoreName);
 		if (puzzleId === -1) {
 			window.localStorage.removeItem(instanceStoreName);
+		}
+
+		if (back){
+			window.location = back;
 		}
 	}
 

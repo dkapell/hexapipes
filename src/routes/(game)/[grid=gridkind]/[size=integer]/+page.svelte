@@ -10,5 +10,6 @@
 		category={$page.params.grid}
 		size={Number($page.params.size)}
 		puzzleId={-1}
+		back={$page.url.searchParams.get('back')}
 	/>
 {/key}
