@@ -229,11 +229,13 @@
 			{#if solved}
 				Solved!
 			{/if}
+			{#if !back}
 			<a
 				href="/{$page.params.grid}/{$page.params.size}"
 				data-sveltekit-noscroll
 				on:click={newPuzzle}>Next puzzle</a
 			>
+			{/if}
 		{/if}
 	</div>
 	<PuzzleButtons
@@ -251,10 +253,10 @@
 <style>
 	.congrat {
 		margin: auto;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		font-size: 150%;
 		color: var(--primary-color);
 		text-align: center;
-		min-height: 30px;
+		min-height: 0px;
 	}
 </style>

@@ -21,40 +21,19 @@
 	let showSettings = false;
 </script>
 
-<div class="buttons">
+<div class="row buttons">
+	<div class='col text-center'>
 	<!-- Start over button-->
-	<button on:click={startOver}> 🔁 Start over </button>
+	<button class='btn btn-outline-primary mx-1 btn-lg' on:click={startOver}> Start over </button>
 	<!-- Settings button -->
-	<button on:click={() => (showSettings = !showSettings)}> ⚙️ Settings </button>
+	<button class='btn btn-outline-primary mx-1 btn-lg' on:click={() => (showSettings = !showSettings)}> Settings </button>
 	<!-- New puzzle button -->
 	{#if includeNewPuzzleButton}
-		<button on:click={newPuzzle}> ➡️ New puzzle </button>
+		<button class='btn btn-outline-primary mx-1 btn-lg' on:click={newPuzzle}> New puzzle </button>
 	{/if}
+</div>
 </div>
 
 {#if showSettings}
 	<Settings />
 {/if}
-
-<style>
-	.buttons {
-		display: flex;
-		justify-content: center;
-		column-gap: 1em;
-		margin-bottom: 1em;
-		flex-wrap: wrap;
-		row-gap: 1em;
-	}
-	button {
-		color: var(--text-color);
-		display: block;
-		min-height: 2em;
-		cursor: pointer;
-	}
-	.secondary button {
-		background: none;
-		border: none;
-		text-decoration: underline;
-		color: #888;
-	}
-</style>

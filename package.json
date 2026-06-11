@@ -14,7 +14,7 @@
 		"daily": "vitest run dailies",
 		"coverage": "vitest run --coverage",
 		"bench": "vitest bench",
-"start": "node build"
+		"start": "node build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
